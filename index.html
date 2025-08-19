@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>SecureStrike — Your legal weapon against scams</title>
+
+  <!-- SEO -->
+  <meta name="description" content="SecureStrike is the AI-powered, legally compliant way to strike back at scammers. One-tap reporting that gets results. Join the waitlist.">
+  <meta property="og:title" content="SecureStrike — Your legal weapon against scams">
+  <meta property="og:description" content="AI that converts spam and scams into airtight reports sent to the right abuse desks.">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#ea6782">
+
+  <style>
+    :root{
+      --bg:#fff7f9;        /* soft pink background */
+      --primary:#ea6782;   /* rose */
+      --primary-deep:#d4516d;
+      --text:#2b2b2b;
+      --muted:#6b6b6b;
+      --card:#ffffff;
+      --ring:#ffd9e4;
+      --max: 760px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--text); background:var(--bg);
+    }
+    header{
+      background: radial-gradient(1200px 600px at 50% -200px, #ffdbe5 0%, var(--bg) 70%), var(--bg);
+      padding:72px 16px 40px; text-align:center;
+    }
+    .brand{ color:var(--primary-deep); font-weight:800; letter-spacing:.2px; }
+    h1{ margin:10px 0 12px; font-size: clamp(28px, 4.5vw, 44px); color:#1f1f1f;}
+    .lead{
+      margin:0 auto; max-width: var(--max); color:#3b3b3b; font-size: clamp(16px, 2.3vw, 18px);
+    }
+    main{ max-width: var(--max); margin: 28px auto 56px; padding: 0 16px;}
+    .card{
+      background:var(--card); border-radius:16px; padding:28px;
+      box-shadow:0 12px 30px rgba(234,103,130,.15), 0 2px 8px rgba(234,103,130,.08);
+      border:1px solid #ffe7ee;
+    }
+    .card h2{ margin:0 0 8px; font-size:22px;}
+    .bullets{ margin:12px 0 18px; padding:0 0 0 18px; color:#424242;}
+    form{ display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;}
+    input[type="email"]{
+      flex:1 1 280px; padding:12px 14px; font-size:16px; border:1px solid #f3c1ce; border-radius:10px;
+      outline: none;
+    }
+    input[type="email"]:focus{ box-shadow: 0 0 0 4px var(--ring); border-color: var(--primary);}
+    button{
+      padding:12px 18px; font-size:16px; border:0; border-radius:10px; cursor:pointer;
+      background:var(--primary); color:#fff; font-weight:600;
+    }
+    button:hover{ background:var(--primary-deep); }
+    .fineprint{ margin-top:10px; font-size:13px; color:var(--muted);}
+    .trust{
+      margin-top:16px; display:flex; gap:10px; align-items:center; color:#444; font-size:14px;
+    }
+    .pill{ border:1px solid #ffd4e0; padding:6px 10px; border-radius:999px; background:#fff; }
+    .split{ display:grid; gap:18px; grid-template-columns:1fr; }
+    @media (min-width: 820px){ .split{ grid-template-columns: 1.2fr .8fr; } }
+    .side{
+      background:linear-gradient(160deg, #fff, #ffe9ef); border:1px dashed #ffd4e0;
+      border-radius:16px; padding:20px;
+    }
+    .side h3{ margin:0 0 8px; font-size:18px;}
+    .kicker{ display:inline-block; padding:6px 10px; background:#ffe8ef; border:1px solid #ffd4e0; color:#b63e5a; border-radius:999px; font-size:12px; font-weight:700; }
+    footer{ text-align:center; padding:28px 16px; color:var(--muted); font-size:14px;}
+    a{ color:var(--primary-deep); text-decoration:underline; text-underline-offset:2px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">SecureStrike</div>
+    <h1>Your legal weapon against scams</h1>
+    <p class="lead">AI that converts spam texts, emails, and shady links into airtight reports — sent to the registrar, host, and Safe Browsing channels that actually get results. Strike back without crossing the line.</p>
+  </header>
+
+  <main>
+    <section class="card split">
+      <div>
+        <span class="kicker">Early Access</span>
+        <h2>Join the waitlist</h2>
+        <ul class="bullets">
+          <li>One-tap reports to multiple abuse desks</li>
+          <li>Evidence packs: WHOIS, DNS, headers, and screenshots</li>
+          <li>Impact feed: see when takedowns happen</li>
+        </ul>
+
+        <!-- Replace action with your Formspree endpoint -->
+        <form action="https://formspree.io/f/XXXXYYYY" method="POST">
+          <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address"/>
+          <button type="submit">Get Early Access</button>
+
+          <!-- Optional fields -->
+          <input type="hidden" name="_subject" value="SecureStrike Waitlist">
+          <input type="hidden" name="_redirect" value="/thanks.html">
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+        </form>
+
+        <div class="fineprint">No spam. Occasional updates. Unsubscribe anytime.</div>
+
+        <div class="trust">
+          <span class="pill">AI-powered</span>
+          <span class="pill">Legally Compliant</span>
+          <span class="pill">Privacy-first</span>
+        </div>
+      </div>
+
+      <aside class="side">
+        <h3>How it works</h3>
+        <ol style="margin:6px 0 0; padding-left:18px; color:#474747;">
+          <li>Forward a suspicious email, text, or URL to SecureStrike.</li>
+          <li>AI extracts indicators, classifies the abuse, and compiles evidence.</li>
+          <li>With one tap, send a standardized report to the right abuse desks.</li>
+        </ol>
+        <p style="margin:12px 0 0; color:#5b5b5b; font-size:14px;">
+          Built to follow the proven channels (registrars, hosts, Safe Browsing, regulators) — maximum pressure, zero vigilante risk.
+        </p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> SecureStrike · “Weaponize compliance, not chaos.”
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
