@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 96 96" role="img" aria-labelledby="title desc">
+  <title id="title">SecureStrike shield mark</title>
+  <desc id="desc">Shield with lightning bolt</desc>
+  <defs>
+    <linearGradient id="ss-gradient" x1="12" y1="12" x2="84" y2="84" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EA6782"/>
+      <stop offset="1" stop-color="#D4516D"/>
+    </linearGradient>
+  </defs>
+  <!-- outer shield -->
+  <path d="M48 16 L76 24 L76 46 C76 60 66 74 48 84 C30 74 20 60 20 46 L20 24 Z"
+        fill="url(#ss-gradient)" stroke="#D4516D" stroke-width="2"/>
+  <!-- lightning -->
+  <path d="M42 28 H60 L50 46 H62 L36 80 L44 56 H30 Z"
+        fill="#FFFFFF" opacity="0.98"/>
+</svg>

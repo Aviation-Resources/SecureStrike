@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 100" role="img" aria-labelledby="title desc">
+  <title id="title">SecureStrike logo</title>
+  <desc id="desc">Shield with lightning bolt followed by the word SecureStrike</desc>
+  <defs>
+    <linearGradient id="ss-gradient" x1="8" y1="14" x2="64" y2="82" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#EA6782"/>
+      <stop offset="1" stop-color="#D4516D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- icon -->
+  <g transform="translate(12,6)">
+    <path d="M36 14 L64 22 L64 44 C64 58 54 72 36 82 C18 72 8 58 8 44 L8 22 Z"
+          fill="url(#ss-gradient)" stroke="#D4516D" stroke-width="2" />
+    <path d="M30 26 H50 L38 46 H52 L28 78 L36 54 H22 Z"
+          fill="#FFFFFF" opacity="0.98"/>
+  </g>
+
+  <!-- wordmark -->
+  <g transform="translate(100,0)">
+    <text x="0" y="66"
+          font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+          font-size="42" font-weight="800" letter-spacing=".4"
+          fill="#1F1F1F">Secure</text>
+    <text x="166" y="66"
+          font-family="Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif"
+          font-size="42" font-weight="800" letter-spacing=".4"
+          fill="#D4516D">Strike</text>
+  </g>
+</svg>
