@@ -1,0 +1,125 @@
+<!doctype html>
+<meta charset="utf-8" />
+<title>Style Guide</title>
+<style>
+  :root{
+    /* Brand tokens */
+    --primary-100:#EA6782; --primary-200:#D4516D; --primary-300:#B23E57;
+    --secondary-100:#3BAFA9; --secondary-200:#2A8C87; --secondary-300:#1D6C68;
+
+    --bg-primary-light:#FFF7F9; --bg-secondary-light:#F2FBFA;
+
+    --trim-primary-light:#FFD9E4; --trim-primary-dark:#9E364D;
+    --trim-secondary-light:#D1F2F0; --trim-secondary-dark:#15514E;
+
+    --text-primary-100:#1A1A1A; --text-primary-200:#333333; --text-primary-300:#4D4D4D;
+    --text-secondary-100:#4A4F54; --text-secondary-200:#666B70; --text-secondary-300:#82878C;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:24px; font:14px/1.4 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+       color:var(--text-primary-100); background:#fff}
+  h1{margin:0 0 16px; font-size:20px}
+  h2{margin:24px 0 8px; font-size:14px; text-transform:uppercase; letter-spacing:.04em; opacity:.75}
+
+  .swatches{display:grid; gap:10px; grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+  .swatch{background:var(--bg); border:1px solid rgba(0,0,0,.08); border-radius:8px; padding:12px}
+  .swatch.on-dark{color:#fff; border-color:rgba(255,255,255,.18)}
+  .name{display:block; font-weight:600; margin-bottom:4px}
+  .hex{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; opacity:.85}
+  .sample{margin-top:8px; font-size:12px; opacity:.9}
+
+  /* Text color cards (show the text color on white) */
+  .text-card{border:1px solid rgba(0,0,0,.08); border-radius:8px; padding:12px; background:#fff}
+</style>
+
+<h1>Style Guide</h1>
+
+<!-- Primary -->
+<h2>Primary</h2>
+<div class="swatches">
+  <div class="swatch" style="--bg:var(--primary-100)">
+    <span class="name">primary-100</span><span class="hex">#EA6782</span>
+  </div>
+  <div class="swatch" style="--bg:var(--primary-200)">
+    <span class="name">primary-200</span><span class="hex">#D4516D</span>
+  </div>
+  <div class="swatch on-dark" style="--bg:var(--primary-300)">
+    <span class="name">primary-300</span><span class="hex">#B23E57</span>
+  </div>
+</div>
+
+<!-- Secondary -->
+<h2>Secondary</h2>
+<div class="swatches">
+  <div class="swatch" style="--bg:var(--secondary-100)">
+    <span class="name">secondary-100</span><span class="hex">#3BAFA9</span>
+  </div>
+  <div class="swatch" style="--bg:var(--secondary-200)">
+    <span class="name">secondary-200</span><span class="hex">#2A8C87</span>
+  </div>
+  <div class="swatch on-dark" style="--bg:var(--secondary-300)">
+    <span class="name">secondary-300</span><span class="hex">#1D6C68</span>
+  </div>
+</div>
+
+<!-- Backgrounds -->
+<h2>Backgrounds</h2>
+<div class="swatches">
+  <div class="swatch" style="--bg:var(--bg-primary-light)">
+    <span class="name">bg-primary-light</span><span class="hex">#FFF7F9</span>
+  </div>
+  <div class="swatch" style="--bg:var(--bg-secondary-light)">
+    <span class="name">bg-secondary-light</span><span class="hex">#F2FBFA</span>
+  </div>
+</div>
+
+<!-- Trims -->
+<h2>Trims</h2>
+<div class="swatches">
+  <div class="swatch" style="--bg:var(--trim-primary-light)">
+    <span class="name">trim-primary-light</span><span class="hex">#FFD9E4</span>
+  </div>
+  <div class="swatch on-dark" style="--bg:var(--trim-primary-dark)">
+    <span class="name">trim-primary-dark</span><span class="hex">#9E364D</span>
+  </div>
+  <div class="swatch" style="--bg:var(--trim-secondary-light)">
+    <span class="name">trim-secondary-light</span><span class="hex">#D1F2F0</span>
+  </div>
+  <div class="swatch on-dark" style="--bg:var(--trim-secondary-dark)">
+    <span class="name">trim-secondary-dark</span><span class="hex">#15514E</span>
+  </div>
+</div>
+
+<!-- Text colors -->
+<h2>Text — Primary</h2>
+<div class="swatches">
+  <div class="text-card" style="color:var(--text-primary-100)">
+    <span class="name">primary-text-100</span><span class="hex">#1A1A1A</span>
+    <div class="sample">Sample text: The quick brown fox…</div>
+  </div>
+  <div class="text-card" style="color:var(--text-primary-200)">
+    <span class="name">primary-text-200</span><span class="hex">#333333</span>
+    <div class="sample">Sample text: The quick brown fox…</div>
+  </div>
+  <div class="text-card" style="color:var(--text-primary-300)">
+    <span class="name">primary-text-300</span><span class="hex">#4D4D4D</span>
+    <div class="sample">Sample text: The quick brown fox…</div>
+  </div>
+</div>
+
+<h2>Text — Secondary (cool grays)</h2>
+<div class="swatches">
+  <div class="text-card" style="color:var(--text-secondary-100)">
+    <span class="name">secondary-text-100</span><span class="hex">#4A4F54</span>
+    <div class="sample">Sample text: The quick brown fox…</div>
+  </div>
+  <div class="text-card" style="color:var(--text-secondary-200)">
+    <span class="name">secondary-text-200</span><span class="hex">#666B70</span>
+    <div class="sample">Sample text: The quick brown fox…</div>
+  </div>
+  <div class="text-card" style="color:var(--text-secondary-300)">
+    <span class="name">secondary-text-300</span><span class="hex">#82878C</span>
+    <div class="sample">Sample text: The quick brown fox…</div>
+  </div>
+</div>

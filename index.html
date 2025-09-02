@@ -14,79 +14,105 @@
 
   <style>
     :root{
-      --bg:#fff7f9;        /* soft pink background */
-      --primary:#ea6782;   /* rose */
-      --primary-deep:#d4516d;
-      --text:#2b2b2b;
-      --muted:#6b6b6b;
-      --card:#ffffff;
-      --ring:#ffd9e4;
+      /* Brand tokens (copied from style-guide.html) */
+      --primary-100:#EA6782; --primary-200:#D4516D; --primary-300:#B23E57;
+      --secondary-100:#3BAFA9; --secondary-200:#2A8C87; --secondary-300:#1D6C68;
+
+      --bg-primary-light:#FFF7F9; --bg-secondary-light:#F2FBFA;
+
+      --trim-primary-light:#FFD9E4; --trim-primary-dark:#9E364D;
+      --trim-secondary-light:#D1F2F0; --trim-secondary-dark:#15514E;
+
+      --text-primary-100:#1A1A1A; --text-primary-200:#333333; --text-primary-300:#4D4D4D;
+      --text-secondary-100:#4A4F54; --text-secondary-200:#666B70; --text-secondary-300:#82878C;
+
       --max: 760px;
     }
     *{box-sizing:border-box}
     body{
       margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-      color:var(--text); background:var(--bg);
+      color:var(--text-primary-100); background:var(--bg-primary-light);
     }
     header{
-      background: radial-gradient(1200px 600px at 50% -200px, #ffdbe5 0%, var(--bg) 70%), var(--bg);
+      /* use trim + bg tokens instead of hard-coded pinks */
+      background: radial-gradient(1200px 600px at 50% -200px, var(--trim-primary-light) 0%, var(--bg-primary-light) 70%), var(--bg-primary-light);
       padding:72px 16px 40px; text-align:center;
     }
-    .brand{ color:var(--primary-deep); font-weight:800; letter-spacing:.2px; }
-    h1{ margin:10px 0 12px; font-size: clamp(28px, 4.5vw, 44px); color:#1f1f1f;}
+    .brand{ color:var(--primary-200); font-weight:800; letter-spacing:.2px; }
+    h1{ margin:10px 0 12px; font-size: clamp(28px, 4.5vw, 44px); color:var(--text-primary-100);}
     .lead{
-      margin:0 auto; max-width: var(--max); color:#3b3b3b; font-size: clamp(16px, 2.3vw, 18px);
+      margin:0 auto; max-width: var(--max); color:var(--text-primary-200); font-size: clamp(16px, 2.3vw, 18px);
     }
     main{ max-width: var(--max); margin: 28px auto 56px; padding: 0 16px;}
     .card{
-      background:var(--card); border-radius:16px; padding:28px;
-      box-shadow:0 12px 30px rgba(234,103,130,.15), 0 2px 8px rgba(234,103,130,.08);
-      border:1px solid #ffe7ee;
+      background:#fff; border-radius:16px; padding:28px;
+      box-shadow:0 12px 30px rgba(178,62,87,.15), 0 2px 8px rgba(178,62,87,.08); /* primary-300 tint */
+      border:1px solid var(--trim-primary-light);
     }
-    .card h2{ margin:0 0 8px; font-size:22px;}
-    .bullets{ margin:12px 0 18px; padding:0 0 0 18px; color:#424242;}
+    .card h2{ margin:0 0 8px; font-size:22px; color:var(--text-primary-100);}
+    .bullets{ margin:12px 0 18px; padding:0 0 0 18px; color:var(--text-primary-200);} 
     form{ display:flex; gap:10px; flex-wrap:wrap; margin-top:6px;}
     input[type="email"]{
-      flex:1 1 280px; padding:12px 14px; font-size:16px; border:1px solid #f3c1ce; border-radius:10px;
-      outline: none;
+      flex:1 1 280px; padding:12px 14px; font-size:16px; border:1px solid var(--trim-primary-light); border-radius:10px;
+      color:var(--text-primary-100); background:#fff; outline:none;
     }
-    input[type="email"]:focus{ box-shadow: 0 0 0 4px var(--ring); border-color: var(--primary);}
+    input[type="email"]::placeholder{ color:var(--text-secondary-300); }
+    input[type="email"]:focus{ box-shadow: 0 0 0 4px var(--trim-primary-light); border-color: var(--primary-100);} 
     button{
       padding:12px 18px; font-size:16px; border:0; border-radius:10px; cursor:pointer;
-      background:var(--primary); color:#fff; font-weight:600;
+      background:var(--primary-100); color:#fff; font-weight:600;
     }
-    button:hover{ background:var(--primary-deep); }
-    .fineprint{ margin-top:10px; font-size:13px; color:var(--muted);}
+    button:hover{ background:var(--primary-200); }
+    .fineprint{ margin-top:10px; font-size:13px; color:var(--text-secondary-300);} 
     .trust{
-      margin-top:16px; display:flex; gap:10px; align-items:center; color:#444; font-size:14px;
+      margin-top:16px; display:flex; gap:10px; align-items:center; color:var(--text-primary-200); font-size:14px;
     }
-    .pill{ border:1px solid #ffd4e0; padding:6px 10px; border-radius:999px; background:#fff; }
+    .pill{ border:1px solid var(--trim-primary-light); padding:6px 10px; border-radius:999px; background:#fff; }
     .split{ display:grid; gap:18px; grid-template-columns:1fr; }
     @media (min-width: 820px){ .split{ grid-template-columns: 1.2fr .8fr; } }
     .side{
-      background:linear-gradient(160deg, #fff, #ffe9ef); border:1px dashed #ffd4e0;
-      border-radius:16px; padding:20px;
+      background:linear-gradient(160deg, #fff, var(--bg-secondary-light)); border:1px dashed var(--trim-primary-light);
+      border-radius:16px; padding:20px; color:var(--text-primary-200);
     }
-    .side h3{ margin:0 0 8px; font-size:18px;}
-    .kicker{ display:inline-block; padding:6px 10px; background:#ffe8ef; border:1px solid #ffd4e0; color:#b63e5a; border-radius:999px; font-size:12px; font-weight:700; }
-    footer{ text-align:center; padding:28px 16px; color:var(--muted); font-size:14px;}
-    a{ color:var(--primary-deep); text-decoration:underline; text-underline-offset:2px; }
-    .report-links {
-      font-weight: 400;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    }
-    .report-links strong {
-      font-weight: 500;
-    }
-    .report-links h3 {
-      font-weight: 600;
-    }
-    /* layout helpers */
+    .side h3{ margin:0 0 8px; font-size:18px; color:var(--text-primary-100);} 
+    .kicker{ display:inline-block; padding:6px 10px; background:var(--trim-primary-light); border:1px solid var(--trim-primary-light); color:var(--primary-300); border-radius:999px; font-size:12px; font-weight:700; }
+    footer{ text-align:center; padding:28px 16px; color:var(--text-secondary-300); font-size:14px;}
+    a{ color:var(--primary-200); text-decoration:underline; text-underline-offset:2px; }
+
+    /* Optional utility classes using the secondary palette */
+    .u-secondary-text { color: var(--text-secondary-100); }
+    .u-secondary-accent { color: var(--secondary-200); }
+    .u-secondary-chip { background: var(--trim-secondary-light); border:1px solid var(--secondary-100); }
+
+    /* Accessibility helpers */
+    .report-links { font-weight: 400; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; }
+    .report-links strong { font-weight: 500; }
+    .report-links h3 { font-weight: 600; color: var(--text-primary-100); }
     .section { max-width: var(--max); margin: 28px auto; padding: 0 16px; }
-    .section h2 { margin: 0 0 10px; font-size: 22px; }
+    .section h2 { margin: 0 0 10px; font-size: 22px; color: var(--text-primary-100);} 
     .stack { display: grid; gap: 10px; }
-    .muted { color: var(--muted); font-size: 14px; }
+    .muted { color: var(--text-secondary-200); font-size: 14px; }
     .list-tight { margin: 8px 0 0; padding-left: 18px; }
+
+    /* Primary action form styles */
+    .primary-form{ display:grid; grid-template-columns: 1fr auto; gap:10px; margin-top:10px; }
+    @media (max-width:560px){ .primary-form{ grid-template-columns:1fr; } }
+    .input{ flex:1 1 auto; padding:12px 14px; font-size:16px; border:1px solid var(--trim-primary-light); border-radius:10px; color:var(--text-primary-100); background:#fff; outline:none; }
+    .input::placeholder{ color:var(--text-secondary-300); }
+    .input:focus-visible{ box-shadow: 0 0 0 4px var(--trim-primary-light); border-color: var(--primary-100); }
+
+    .btn{ appearance:none; border:0; border-radius:10px; padding:12px 18px; font-size:16px; font-weight:600; cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:10px; }
+    .btn-primary{ background:var(--primary-100); color:#fff; }
+    .btn-primary:hover{ background:var(--primary-200); }
+    .btn-secondary{ background:var(--secondary-100); color:#fff; }
+    .btn-secondary:hover{ background:var(--secondary-200); }
+
+    .form-note{ margin-top:8px; font-size:13px; color:var(--text-secondary-300); }
+    .form-row{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .legal{ font-size:12px; color:var(--text-secondary-300); }
+    .icon{ border-radius:6px; display:inline-block; }
+
+    .visually-hidden{ position:absolute !important; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0; }
   </style>
 </head>
 <body>
@@ -114,108 +140,48 @@
         display: inline-block;
       }
     </style>
-    <p class="lead">AI‑first software that turns scam texts, emails, and shady links into standardized, legally sound reports. Skip the guesswork and hours of forms — SecureStrike does the heavy lifting so you can strike back the right way.</p>
+    <p class="lead">AI‑first software that turns scam texts, emails, and shady links into standardized, legally sound reports. Skip the guesswork and hours of forms — SecureStrike does the heavy lifting so you can strike back the right way with the latest technology at your disposal.</p>
     </header>
 
   <main>
-    <section class="card split">
+    <section class="card">
+
       <div>
-        <span class="kicker">Early Access</span>
-        <h2>Join the waitlist</h2>
-        <ul class="bullets">
-          <li>One-tap reports to multiple abuse desks</li>
-          <li>Evidence packs: WHOIS, DNS, headers, and screenshots</li>
-          <li>Impact feed: see when takedowns happen</li>
-        </ul>
-
-        <!-- Replace action with your Formspree endpoint -->
-        <form action="https://formspree.io/f/XXXXYYYY" method="POST">
-          <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address"/>
-          <button type="submit">Get Early Access</button>
-
-          <!-- Optional fields -->
-          <input type="hidden" name="_subject" value="SecureStrike Waitlist">
-          <input type="hidden" name="_redirect" value="/thanks.html">
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-        </form>
-
-        <div class="fineprint">No spam. Occasional updates. Unsubscribe anytime.</div>
-
-        <div class="trust">
-          <span class="pill">AI-powered</span>
-          <span class="pill">Legally Compliant</span>
-          <span class="pill">Privacy-first</span>
-        </div>
+        <h3 style="margin-bottom:2px;">Beta access through Apple TestFlight</h3>
+        <div class="u-secondary-text" style="margin-bottom:12px;">Help shape the product!</div>
+        <a class="btn btn-secondary" href="https://testflight.apple.com" target="_blank" rel="noopener">
+          <img src="TestFlight_Icon.png" alt="TestFlight Icon" height="24" class="icon"> Open in TestFlight
+        </a>
       </div>
 
-      <aside class="side">
-        <h3>How it works</h3>
-        <ol style="margin:6px 0 0; padding-left:18px; color:#474747;">
-          <li>Forward a suspicious email, text, or URL to SecureStrike.</li>
-          <li>AI extracts indicators, classifies the abuse, and compiles evidence.</li>
-          <li>With one tap, send a standardized report to the right abuse desks.</li>
-        </ol>
-        <p style="margin:12px 0 0; color:#5b5b5b; font-size:14px;">
-          Built to follow the proven channels (registrars, hosts, Safe Browsing, regulators) — maximum pressure, zero vigilante risk.
-        </p>
-      </aside>
-    </section>
+      <div class="form-note" style="margin-top:12px;">Or invite someone else to join — if they join the beta app in TestFlight,
+        you get the app free when released.</div>
 
-    <section class="section">
-      <h2>What you can report</h2>
-      <ul class="bullets list-tight">
-        <li><strong>Full URLs</strong> — find the registrar, DNS records, and hosting provider.</li>
-        <li><strong>Phone numbers</strong> — DNC registry complaints, carrier lookup, and carrier reporting.</li>
-        <li><strong>Emails</strong> — sender details, headers, and reputation checks.</li>
-        <li><strong>Screenshots &amp; photos</strong> — analyzed by vision AI to glean additional indicators.</li>
-      </ul>
+      <form class="primary-form" style="margin-top:6px;"></form>
+        <input id="inviter-email" class="input" type="email" name="inviter" placeholder="your@email.com" required
+          aria-label="Your email address" />
+        <input id="invite-email-2" class="input" type="email" name="invitee" placeholder="invite@example.com" required
+          aria-label="Invitee email address"/>
+        <button class="btn btn-primary" type="submit" style="align-self: flex-start; margin-top:8px;">Send Invite</button>
+      </form>
+      <div class="legal", style="margin-top:12px;">We only use your email for invites and updates. See our <a href="/privacy.html" target="_blank"
+          rel="noopener">Privacy Policy</a>.</div>
     </section>
-
-    <section class="section report-links" id="fast-links" aria-labelledby="report-header">
-      <h2 id="report-header">Fast reporting links</h2>
-      <ul class="list-tight">
-        <li>
-          <strong>Cloudflare (hosting/CDN on Cloudflare)</strong> —
-          <a href="https://abuse.cloudflare.com/" target="_blank" rel="noopener noreferrer">Submit an Abuse Report</a>
-          <span> · </span>
-          <a href="https://www.cloudflare.com/trust-hub/reporting-abuse/" target="_blank" rel="noopener noreferrer">How to report (guide)</a>
-        </li>
-        <li>
-          <strong>Find the Registrar (who controls the domain)</strong> —
-          <a href="https://lookup.icann.org/" target="_blank" rel="noopener noreferrer">ICANN Registration Data Lookup</a>
-        </li>
-        <li>
-          <strong>Google Safe Browsing</strong> —
-          <a href="https://safebrowsing.google.com/safebrowsing/report_phish/" target="_blank" rel="noopener noreferrer">Report phishing</a>
-          <span> · </span>
-          <a href="https://www.google.com/safebrowsing/report_badware/" target="_blank" rel="noopener noreferrer">Report malware</a>
-          <span> · </span>
-          <a href="https://developers.google.com/search/help/report-quality-issues" target="_blank" rel="noopener noreferrer">More reporting options</a>
-        </li>
-        <li>
-          <strong>U.S. Federal Trade Commission</strong> —
-          <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener noreferrer">ReportFraud.ftc.gov</a>
-        </li>
-      </ul>
-      <p class="muted">Tip: include full URLs, timestamps, and screenshots to speed up action.</p>
-    </section>
-
-    <section class="section report-phone" id="phone-reporting" aria-labelledby="phone-header">
-      <h2 id="phone-header">Report a malicious phone number</h2>
-      <ul class="list-tight">
-        <li><strong>Block the number</strong> — use iOS “Silence Unknown Callers” or Android “Block Unknown Numbers,” or carrier tools (AT&amp;T Call Protect, Verizon Call Filter, T‑Mobile Scam Shield).</li>
-        <li><strong>Report to the FTC</strong> — <a href="https://reportfraud.ftc.gov/" target="_blank" rel="noopener noreferrer">ReportFraud.ftc.gov</a> <span> · </span> <a href="https://www.donotcall.gov/" target="_blank" rel="noopener noreferrer">Do Not Call complaint</a></li>
-        <li><strong>Report to the FCC</strong> — <a href="https://consumercomplaints.fcc.gov/hc/en-us/requests/new?ticket_form_id=39744" target="_blank" rel="noopener noreferrer">Unwanted Calls/Texts complaint</a></li>
-        <li><strong>Carrier spam reporting</strong> — forward the malicious text to <code>7726</code> (“SPAM”) to flag the sender with your carrier.</li>
-        <li><strong>Law enforcement</strong> — for threats/harassment/fraud attempts, save logs and screenshots and contact local police.</li>
-      </ul>
-    </section>
-  </main>
 
   <footer>
-    &copy; <span id="year"></span> SecureStrike · “Weaponize compliance, not chaos.”
+    &copy; <span id="year"></span> SecureStrike · “Weaponize compliance, not chaos.” ·
+    <a href="style-guide.html">Style Guide</a>
   </footer>
 
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    const form = document.querySelector('.primary-form');
+    if(form){
+      form.addEventListener('submit', (e) => {
+        const btn = form.querySelector('button[type="submit"]');
+        if(btn){ btn.disabled = true; btn.textContent = 'Sending…'; }
+      });
+    }
+  </script>
 </body>
 </html>
