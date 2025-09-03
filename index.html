@@ -120,31 +120,78 @@
     <div class="brand">
       <img src="/securestrike-logo-full.svg" alt="SecureStrike" height="48">
     </div>
-    <h1>Your legal weapon against <span id="rotating-headline">scams</span></h1>
+    <h1>Your legal weapon against <span id="rotating-headline" class="pill pill-rotating">scams</span></h1>
     <script>
       const words = ["scams", "fraudsters", "blackmailers", "phishers", "spammers", "thieves"];
       const el = document.getElementById("rotating-headline");
       let idx = 0;
       setInterval(() => {
-        el.style.opacity = 0;
-        setTimeout(() => {
-          idx = (idx + 1) % words.length;
-          el.textContent = words[idx];
-          el.style.opacity = 1;
-        }, 350);
+      el.style.opacity = 0;
+      setTimeout(() => {
+        idx = (idx + 1) % words.length;
+        el.textContent = words[idx];
+        el.style.opacity = 1;
+      }, 350);
       }, 2000);
     </script>
     <style>
-      #rotating-headline {
-        transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
-        display: inline-block;
+      #rotating-headline.pill-rotating {
+      transition: opacity 0.35s cubic-bezier(.4,0,.2,1);
+      display: inline-block;
+      background: var(--trim-primary-light);
+      color: var(--primary-300);
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-weight: 700;
+      border: 1px solid var(--trim-primary-light);
+      font-size: 1em;
+      margin-left: 2px;
       }
     </style>
     <p class="lead">AI‑first software that turns scam texts, emails, and shady links into standardized, legally sound reports. Skip the guesswork and hours of forms — SecureStrike does the heavy lifting so you can strike back the right way with the latest technology at your disposal.</p>
     </header>
 
   <main>
-    <section class="card">
+    <section class="section">
+      <div style="display: flex; align-items: flex-start; gap: 24px;">
+        <img src="ai_assisted_upload.png" alt="AI Agents" height="120" style="vertical-align:middle; margin-right:0;">
+        <div>
+          <h2 style="margin-top:0; margin-bottom:12px;">
+            AI Assists you in the collection of
+          </h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 0;">
+            <span class="pill">Domains</span>
+            <span class="pill">Platforms</span>
+            <span class="pill">Emails</span>
+            <span class="pill">Phone numbers</span>
+            <span class="pill">Screenshots &amp; photos</span>
+            <span class="pill">Your complaint</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div style="display: flex; align-items: flex-start; gap: 24px;">
+        
+        <div>
+          <h2 style="margin-top:0; margin-bottom:12px;">
+            Powerful agents tuned by the best engineers work for you
+          </h2>
+          <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 0;">
+            <span class="pill">Technical scraping</span>
+            <span class="pill">Automated evidence builder</span>
+            <span class="pill">Complaint routing</span>
+            <span class="pill">Submission bot</span>
+            <span class="pill">Followthough agent</span>
+          </div>
+        </div>
+        <img src="powerful_agents.png" alt="AI Agents" height="120" style="vertical-align:middle; margin-right:0;">
+      </div>
+    </section>
+
+
+        <section class="card">
 
       <div>
         <h3 style="margin-bottom:2px;">Beta access through Apple TestFlight</h3>
@@ -166,33 +213,6 @@
       </form>
       <div class="legal", style="margin-top:12px;">We only use your email for invites and updates. See our <a href="/privacy.html" target="_blank"
           rel="noopener">Privacy Policy</a>.</div>
-    </section>
-
-
-<section class="section">
-      <h2>
-        <img src="agent.png" alt="AI Agents" height="64" style="vertical-align:middle; margin-right:8px;">
-        What you provide in a report
-      </h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
-      <span class="pill">Domains</span>
-      <span class="pill">Platforms</span>
-      <span class="pill">Emails</span>
-      <span class="pill">Phone numbers</span>
-      <span class="pill">Screenshots &amp; photos</span>
-      <span class="pill">Your complaint</span>
-      </div>
-    </section>
-    <section class="section">
-      <h2>
-      <img src="agent.png" alt="AI Agents" height="64" style="vertical-align:middle; margin-right:8px;">
-      Agents
-      </h2>
-      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
-      <span class="pill">AbuseDeskBot</span>
-      <span class="pill">EvidencePackAI</span>
-      <span class="pill">TakedownTracker</span>
-      </div>
     </section>
 
     <section class="section report-links" id="fast-links" aria-labelledby="report-header">
